@@ -1,2 +1,3 @@
 # GRAPH QL : MOVIE API
-coding practice
+- coding practice
+- backend
