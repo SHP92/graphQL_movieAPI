@@ -19,7 +19,7 @@ WHY graphQL?
 */
 
 import { GraphQLServer } from 'graphql-yoga';
-import resolvers from './resolvers.js'
+import resolvers from './resolvers.js';
 
 const server = new GraphQLServer({
     typeDefs: "schema.graphql" // schema

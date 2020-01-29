@@ -1,29 +1,27 @@
-const people = [
-    {
-        id : 0
-        , name: "Sherlock Holmes"
-        , job : "private detective"
-        , gender : "male"
-    }
-    , {
-        id : 1
-        , name : "John Watson"
-        , job : "army doctor"
-        , gender : "male"
-    }
-];
-
-const getById = id => {
-    const filteredPeople = people.filter(person => id === person.id);
-    return filteredPeople[0];
-}
+/*
+import { Movies, getById, deleteMovie, addMovie } from './db.js';
 
 const resolvers = {
     Query : {
-        people: () => people
-        , person: (_, args) => getById(args.id)
-        // , person : (_, { id }) => getById(id)
+        Movies: () => Movies
+        , Movie: (_, args) => getById(args.id)
+        // , Movie : (_, { id }) => getById(id)
+    }
+    , Mutation : {
+        newMovie: (_, { name, title, score }) => (
+            addMovie(name, title, score)
+        )
+        , oldMovie: (_, { id }) => deleteMovie(id)
     }
 };
+*/
+
+import { getMovies } from './moiveDB';
+
+const resolvers = {
+    Query : {
+        Movies: (_, { rating }) => getMovies(rating)
+    }
+}
 
 export default resolvers;
